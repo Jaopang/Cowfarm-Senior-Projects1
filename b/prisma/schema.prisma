@@ -40,7 +40,7 @@ model Cow {
   dobCow     DateTime  @updatedAt
   sex        String    @db.VarChar(150)
   detail     String?   @db.VarChar(500)
-  farm       Farm      @relation(fields: [farmId], references: [id] )
+  farm       Farm      @relation(fields: [farmId], references: [id] ,onDelete: Cascade )
   farmId     Int
   cowEvents CowEvent[]
   cowVaccines CowVaccine[]
